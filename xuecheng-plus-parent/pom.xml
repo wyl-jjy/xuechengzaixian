@@ -31,11 +31,19 @@
         <okhttp.version>4.8.1</okhttp.version>
         <swagger-spring-boot-starter.version>1.9.0.RELEASE</swagger-spring-boot-starter.version>
         <elasticsearch.version>7.12.1</elasticsearch.version>
+        <knife4j>3.0.2</knife4j>
     </properties>
 
 
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j}</version>
+            </dependency>
+
 
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
@@ -44,6 +52,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
@@ -51,6 +60,8 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
