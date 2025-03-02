@@ -1,0 +1,45 @@
+package com.xuecheng.base.exception;
+
+
+/**
+ * @description 学成在线项目异常类
+ * @author Mr.M
+ * @date 2022/9/6 11:29
+ * @version 1.0
+ */
+public class XueChengPlusException extends RuntimeException {
+
+    private String errMessage;
+    private String errCode;
+
+    public XueChengPlusException() {
+        super();
+    }
+
+    public XueChengPlusException(String errMessage) {
+        super(errMessage);
+        this.errMessage = errMessage;
+    }
+
+    public XueChengPlusException(String errCode, String errMessage) {
+       this.errCode= errCode;
+       this.errMessage = errMessage;
+
+    }
+
+    public String getErrMessage() {
+        return errMessage;
+    }
+
+    public static void cast(CommonError commonError){
+        throw new XueChengPlusException(commonError.getErrMessage());
+    }
+    public static void cast(String errMessage){
+        throw new XueChengPlusException(errMessage);
+    }
+
+    public static void cast(String errCode,String errMessage){
+        throw new XueChengPlusException(errCode,errMessage);
+    }
+
+}
